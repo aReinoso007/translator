@@ -1,16 +1,15 @@
-import { useState } from 'react';
-import './App.css';
-import { Field } from './components/field';
-import { Languages } from './components/languages';
-import { Translate } from './components/translate';
+import "./styles.css";
+import React, { useState } from "react";
+import Field from "./components/field";
+import Translate from "./components/translate";
+import Languages from "./components/languages";
 
-function App() {
-
-  const [language, setLanguage] = useState('es');
-  const [text, setText] = useState('');
+export default function App() {
+  const [language, setLanguage] = useState("es");
+  const [text, setText] = useState("");
 
   return (
-    <div className="App">
+    <div>
       <Field onChange={setText} />
       <Languages language={language} onLanguageChange={setLanguage} />
       <hr />
@@ -18,5 +17,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
